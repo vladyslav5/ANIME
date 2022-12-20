@@ -1,0 +1,26 @@
+import {$host, $authHost} from "./index";
+import jwt_decode from "jwt-decode"
+
+export const registration = async (email, password) => {
+    const {data} = await $host.post('/user/registration', {email, password})
+    localStorage.setItem('token',data.token)
+    return jwt_decode(data.token)
+}
+export const login = async (email, password) => {
+    const {data} = await $host.post('user/login', {email, password})
+    localStorage.setItem('token',data.token)
+    return jwt_decode(data.token)
+}
+export const check = async () => {
+    const {data} = await $authHost.get('user/auth')
+    localStorage.setItem('token',data.token)
+    return jwt_decode(data.token)
+}
+export const edite = async (files) => {
+    const {data} = await $authHost.patch("user/profile",files)
+    return data
+}
+export const getInfo = async (userId) => {
+    const {data} = await $authHost.get("user/profile/" + userId)
+    return data
+}

@@ -1,0 +1,43 @@
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: gray;
+}
+
+body {
+    background-color: #181818;
+    color: white;
+}
+
+.modal-content {
+    background-color: #101010;
+    border: 2px solid white;
+}
+.dropdown-menu {
+    max-height: 280px;
+    overflow-y: auto;
+}
+.card {
+    background-color: #202020;
+}
+
+.card-img-top {
+}
+
+.form-control {
+    background-color: #101010;
+    color: white;
+}
+
+.form-control:hover {
+    background-color: #101010;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: #101010;
+    color: white;
+}
